@@ -1,0 +1,53 @@
+{
+  "name": "webviewer",
+  "productName": "WebViewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "lint": "standard --verbose --fix src/**/*.js"
+  },
+  "keywords": [],
+  "author": "R. Beltran <pantallazo@gmail.com> (http://github.com/Theadd)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Theadd/webviewer.git"
+  },
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {},
+      "electronWinstallerConfig": {
+        "name": "WebViewer"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {}
+    }
+  },
+  "dependencies": {
+    "command-line-args": "3.0.4",
+    "electron-compile": "^4.0.2",
+    "hammer-touchemulator": "0.0.2",
+    "react": "15.4.1",
+    "react-dom": "15.4.1",
+    "react-electron-web-view": "2.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-stage-0": "^6.16.0",
+    "electron-prebuilt-compile": "1.4.12",
+    "standard": "^8.6.0"
+  }
+}
