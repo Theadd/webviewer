@@ -14,5 +14,9 @@ export const optionDefinitions = [
     description: `Page would be forced to be always in visible or hidden state once set, instead of reflecting current window's visibility. Users can set it to [bold]{true} to prevent throttling of DOM timers.`,
     defaultValue: true,
     type: Boolean
+  },
+  {
+    name: 'partition',
+    type: String
   }
 ]

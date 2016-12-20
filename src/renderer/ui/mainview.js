@@ -8,16 +8,22 @@ export class MainView extends React.Component {
     super(props)
 
     this.state = {
-      webpreferences: remote.getGlobal('sharedObj').preferences
+      webpreferences: remote.getGlobal('sharedObj').preferences,
+      options: remote.getGlobal('sharedObj').options,
+      src: null
     }
   }
 
+  componentDidMount () {
+    console.log(JSON.stringify(this.state, null, '  '))
+  }
+
   render () {
-    const { webpreferences } = this.state
+    const { webpreferences, options, src } = this.state
 
     return (
       <div className='container' style={{ height: '100vh' }}>
-        <WebView webpreferences={ webpreferences } src={ 'https://www.airconsole.com/?role=controller' } />
+        <WebView webpreferences={ webpreferences } src={ src || options.src } />
       </div>
     )
   }

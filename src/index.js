@@ -1,11 +1,15 @@
 import { app, BrowserWindow } from 'electron'
 import commandLineArgs from 'command-line-args'
 import { webPreferences } from './lib/webpreferences'
+import { options } from './lib/options'
 import { optionDefinitions } from './lib/commandlineargs'
 
-global.sharedObj = {
-  preferences: webPreferences(commandLineArgs(optionDefinitions))
-}
+global.sharedObj = (args => (
+  {
+    preferences: webPreferences(args),
+    options: options(args)
+  }
+))(commandLineArgs(optionDefinitions))
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
