@@ -18,10 +18,10 @@ let mainWindow
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 360,
-    height: 640,
+    width: 960,
+    height: 540,
     useContentSize: true,
-    alwaysOnTop: true,
+    alwaysOnTop: false,
     autoHideMenuBar: true,
     enableLargerThanScreen: true,
     backgroundColor: '#1F1F1F',
@@ -36,7 +36,7 @@ const createWindow = () => {
     experimentalFeatures: true,
     experimentalCanvasFeatures: true,
     /* TODO: allow to toggle */ backgroundThrottling: false,
-    frame: false
+    frame: true
   })
 
   // and load the index.html of the app.
@@ -44,7 +44,7 @@ const createWindow = () => {
 
   // Open the DevTools.
   if (process.env.NODE_ENV !== 'production') {
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
   }
   
   // Emitted when the window is closed.

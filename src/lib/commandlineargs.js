@@ -6,7 +6,7 @@ export const optionDefinitions = [
     description: 'Open specified page in a small WebView in a self-contained window.',
     multiple: false,
     defaultOption: true,
-    defaultValue: 'https://www.airconsole.com/?role=controller',
+    defaultValue: 'https://www.airconsole.com/',
     typeLabel: '[underline]{url}'
   },
   {

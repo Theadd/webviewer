@@ -5,7 +5,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "NODE_ENV=production && electron-forge start",
+    "pack": "NODE_ENV=production && electron-forge package app",
     "lint": "standard --verbose --fix src/**/*.js"
   },
   "keywords": [],
@@ -25,8 +26,7 @@
           "zip"
         ],
         "linux": [
-          "deb",
-          "rpm"
+          "deb"
         ]
       },
       "electronPackagerConfig": {},
